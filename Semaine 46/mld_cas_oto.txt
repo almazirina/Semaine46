@@ -1,0 +1,14 @@
+clients(cli_nom, cli_prenom, cli_id, cli_adresse, cli_tel, cli_mail, cli_mdp, cli_date_idscr)
+marques(marque_nom, marque_id)
+
+posts(post_nom, post_id)
+modeles(mod_nom, mod_id, #marque_id)
+fournisseurs(fo_nom, fo_id, fo_adresse, fo_tel, fo_mail)
+vehicules(ve_id, ve_prix, ve_ean, ve_desc, ve_couleur, ve_foto, ve_dispon, ve_stock_ph, ve_stock_alert, ve_ref, #fo_id, #mod_id)
+accessoires(acc_nom, acc_id, acc_prix, acc_ref, acc_ean, acc_stock_ph, acc_stock_alert, acc_couleur, acc_desc, acc_foto, acc_dispon, #fo_id)
+
+salaries(sal_id, sal_nom, sal_prenom, sal_salaire, sal_sexe, sal_date_entre, sal_tel, sal_adresse, #post_id)
+services(ser_nom, ser_id, #sal_id)
+commandes(com_id, com_date, com_pay_date, com_livr_date, #cli_id, #sal_id)
+
+commandes_details(comdet_id, prix_unite, quantite, reduc, prix_commande, #com_id, #acc_id, #ve_id, #ser_id)
